@@ -1,0 +1,25 @@
+@use "../Abstracts/mixins" as *;
+@use "../Abstracts/variables" as *;
+
+.home {
+    padding: 20px;
+
+    @include respond(desktop) {
+        padding: 40px 80px;
+    }
+
+    &-grid {
+        margin-top: 22px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+        @include respond(desktop) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px 60px;
+            background: $color-background;
+            padding: 50px 50px;
+            border-radius: $radius-lg;
+        }
+    }
+}

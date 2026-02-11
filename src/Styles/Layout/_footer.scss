@@ -1,0 +1,31 @@
+@use "../Abstracts/mixins" as *;
+@use "../Abstracts/variables" as *;
+
+
+.footer {
+    background: $color-black;
+    color: $color-white;
+    text-align: center;
+    padding: 40px 20px;
+
+    @include respond(desktop) {
+        padding: 60px 20px;
+    }
+
+    &-logo {
+        width: 122px;
+        margin: 0 auto 10px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &-text {
+        font-size: nav-mobile;
+
+        @include respond(desktop) {
+            font-size: nav-desktop;
+        }
+    }
+}
