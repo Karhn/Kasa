@@ -10,7 +10,7 @@
     }
 
     &-inner {
-        max-width: 1240px;
+        max-width: auto;
         margin: O auto;
         display: flex;
         justify-content: space-between;
@@ -40,12 +40,12 @@
     }
 
     &-link {
-        font-size: nav-mobile;
+        font-size: $nav-mobile;
         text-decoration: none;
         color: $color-black;
 
         @include respond(desktop) {
-            font-size: nav-desktop;
+            font-size: $nav-desktop;
         }
 
         &.is-active {

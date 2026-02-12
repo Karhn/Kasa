@@ -22,10 +22,10 @@
     }
 
     &-text {
-        font-size: nav-mobile;
+        font-size: $nav-mobile;
 
         @include respond(desktop) {
-            font-size: nav-desktop;
+            font-size: $nav-desktop;
         }
     }
 }

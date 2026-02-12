@@ -6,11 +6,11 @@
     height: 111px;
     border-radius: 10px;
     overflow: hidden;
-    margin: 20px;
+
 
     @include respond(desktop) {
         height: 223px;
-        margin: 40px 100px;
+        margin-bottom: 30px;
         border-radius: 25px;
     }
 }
@@ -26,16 +26,16 @@
     position: absolute;
     top: 50%;
     left: 20px;
-    transform: translateY(-50%);
+    transform: translateY(-70%);
     color: $color-white;
-    font-size: h1-mobile;
+    font-size: $h1-mobile;
     font-weight: bold;
     max-width: 220px;
 
     @include respond(desktop) {
         left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: h1-desktop;
+        transform: translate(-50%, -100%);
+        font-size: $h1-desktop;
         max-width: none;
         text-align: center;
     }

@@ -7,8 +7,13 @@
 
 @use "./Components/card";
 @use "./Components/banner";
+@use "./Components/collapse";
 
 @use "./Pages/home";
 @use "./Pages/about";
 @use "./Pages/house";
 @use "./Pages/notfound";
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
