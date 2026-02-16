@@ -42,6 +42,17 @@
     &-content {
         background: #F6F6F6;
         border-radius: 0 0 5px 5px;
+        overflow: hidden;
+        opacity: 0;
+        max-height: 0;
+        transform: translateY(-5px);
+        transition: max-height 450ms ease, transform 450ms ease, opacity 350ms ease;
+    }
+
+    &.isOpen &-content {
+        max-height: 200px;
+        transform: translateY(0);
+        opacity: 1;
     }
 
     &-content-inner {

@@ -15,7 +15,7 @@ export default function Collapse({ title, children }) {
                 </span>
             </button>
 
-            <div className="collapse-content" hidden={!isOpen}>
+            <div className="collapse-content">
                 <div className="collapse-content-inner">
                     {children}
                 </div>

@@ -33,9 +33,11 @@
     &-nav {
         display: flex;
         gap: 16px;
+        text-transform: uppercase;
 
         @include respond(desktop) {
             gap: 57px;
+            text-transform: none;
         }
     }
 
