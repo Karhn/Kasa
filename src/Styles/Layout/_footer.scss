@@ -29,3 +29,11 @@
         }
     }
 }
+
+.only-mobile {
+    display: inline;
+
+    @include respond(desktop) {
+        display: none;
+    }
+}

@@ -2,10 +2,10 @@
 @use "../Abstracts/variables" as *;
 
 .house {
-    padding: 20px;
+    padding: 20px 20px 40px;
 
     @include respond(desktop) {
-        padding: 40px 100px;
+        padding: 20px 100px 60px;
     }
 
     &-top {
@@ -16,7 +16,7 @@
             justify-content: space-between;
             align-items: flex-start;
             gap: 40px;
-            margin-top: 12px;
+            margin-top: 30px;
         }
     }
 
@@ -39,8 +39,45 @@
         }
     }
 
+    &-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 12px;
+    }
+
+    &-host {
+        margin-top: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .rating {
+            order: 1;
+        }
+
+        .host {
+            order: 2;
+        }
+
+        @include respond(desktop) {
+            margin-top: 0;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 20px;
+
+            .rating {
+                order: 2;
+            }
+
+            .host {
+                order: 1;
+            }
+        }
+    }
+
     &-collapses {
-        margin-top: 18px;
+        margin-top: 13px;
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -51,7 +88,7 @@
         }
 
         @include respond(desktop) {
-            margin-top: 25px;
+            margin-top: 20px;
             flex-direction: row;
             gap: 76px;
 
@@ -59,10 +96,38 @@
     }
 }
 
+.host {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &-name {
+        color: $color-primary;
+        font-size: 12px;
+        margin: 0;
+        text-align: right;
+
+        @include respond(desktop) {
+            font-size: 18px;
+        }
+    }
+
+    &-picture {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+
+        @include respond(desktop) {
+            width: 64px;
+            height: 64px;
+        }
+    }
+}
+
 .equipements {
     list-style: none;
     padding: 0;
-    margin: 0;
 
     li {
         margin: 0;

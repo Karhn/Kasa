@@ -1,0 +1,20 @@
+@use "../Abstracts/mixins" as *;
+@use "../Abstracts/variables" as *;
+
+.rating {
+    display: flex;
+    gap: 6px;
+
+    &-score {
+        color: #e3e3e3;
+        font-size: 18px;
+
+        @include respond(desktop) {
+            font-size: 24px;
+        }
+
+        &.is-full {
+            color: $color-primary;
+        }
+    }
+}

@@ -2,7 +2,8 @@ import { useParams, Navigate } from "react-router-dom";
 
 import Slideshow from "../Components/Slideshow";
 import Collapse from "../Components/Collapse";
-import data from "../Data/Data.json"
+import Rating from "../Components/Rating";
+import data from "../Data/Data.json";
 
 export default function House() {
     const {id} = useParams();
@@ -23,15 +24,23 @@ export default function House() {
                     <p className="house-location"> {logement.location} </p>
 
                     <div className="house-tags">
-                        {logement.tags?.map((tag) =>(
+                        {logement.tags.map((tag) =>(
                             <span key={tag} className="tag">
                                 {tag}
                             </span>
                         ))}
                     </div>
                 </div>
+
+                <div className="house-host">
+                    <div className="host">
+                        <p className="host-name"> {logement.host.name.split(" ")[0]} <br/> {logement.host.name.split(" ").slice(1).join(" ")}</p>
+                            <img className="host-picture" src={logement.host.picture}/>
+                    </div>
+                    <Rating rating={logement.rating} />
+                </div>
             </div>
-            
+
             <div className="house-collapses">
                 <Collapse title="Description">
                     <p> {logement.description} </p>
@@ -39,7 +48,7 @@ export default function House() {
 
                 <Collapse title="Equipements">
                     <ul className="equipements">
-                        {logement.equipments?.map((equipments) => (
+                        {logement.equipments.map((equipments) => (
                             <li key={equipments}> {equipments} </li>
                         ))}
                     </ul>

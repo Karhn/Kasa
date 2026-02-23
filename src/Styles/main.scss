@@ -10,6 +10,7 @@
 @use "./Components/banner";
 @use "./Components/collapse";
 @use "./Components/slideshow";
+@use "./Components/rating";
 
 @use "./Pages/home";
 @use "./Pages/about";
@@ -18,4 +19,10 @@
 
 body {
     font-family: "Montserrat", sans-serif;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
 }
