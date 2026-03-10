@@ -46,7 +46,7 @@ export default function House() {
                     <p> {logement.description} </p>
                 </Collapse>
 
-                <Collapse title="Equipements">
+                <Collapse title="Équipements">
                     <ul className="equipements">
                         {logement.equipments.map((equipments) => (
                             <li key={equipments}> {equipments} </li>

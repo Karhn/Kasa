@@ -4,6 +4,8 @@ export default function Slideshow({ pictures = [], title = "Logement" }) {
     const [index, setIndex] = useState(0);
     const total = pictures.length;
 
+    const controls = total > 1;
+
     if (!pictures || total === 0) {
         return null
     }
@@ -13,25 +15,29 @@ export default function Slideshow({ pictures = [], title = "Logement" }) {
     }
 
     const goNext = () => {
-        setIndex((prev) => prev === total -1 ? 0 : prev +1)
+        setIndex((prev) => (prev === total -1 ? 0 : prev +1))
     }
 
     return (
         <div className="slideshow">
-            <img  className="slideshow-img" src={pictures[index]} alt={`${title} - ${index + 1}`}/>
+            <img  className="slideshow-img" src={pictures[index]} alt={`${title}`}/>
 
-            <button type="button" className="slideshow-arrow slideshow-arrow--left" onClick={goPrev}>
-                ‹
-            </button>
+            {controls && (
+                <> 
+                    <button type="button" className="slideshow-arrow slideshow-arrow--left" onClick={goPrev}>
+                        ‹
+                    </button>
 
-            <button type="button" className="slideshow-arrow slideshow-arrow--right" onClick={goNext}>
-                ›
-            </button>
+                    <button type="button" className="slideshow-arrow slideshow-arrow--right" onClick={goNext}>
+                        ›
+                    </button>
 
-            <div className="slideshow-counter">
-                {index +1}/{total}
-            </div>
-
+                    <div className="slideshow-counter">
+                        {index +1}/{total}
+                    </div>
+                </> 
+            )}
+            
         </div>
     )
 }

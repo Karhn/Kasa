@@ -14,6 +14,10 @@
         grid-template-columns: 1fr;
         gap: 20px;
 
+        @include respond(tablet) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
         @include respond(desktop) {
             grid-template-columns: repeat(3, 1fr);
             gap: 50px 60px;

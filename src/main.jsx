@@ -6,7 +6,12 @@ import App from "./App.jsx"
 import "./Styles/main.scss"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
+  <BrowserRouter
+    future={{
+      v7_startTransition: true,
+      v7_relativeSplatPath: true,
+    }}
+  >
     <App/>
   </BrowserRouter>
 );
